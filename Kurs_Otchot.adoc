@@ -610,13 +610,7 @@ image::photos/ADC.png[]
 
 
 
----
 
-Класс *DMA*
-
-.Класс *DMA*
-
-image::photos/DMA.png[]
 
 Методы:
 
