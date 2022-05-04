@@ -470,7 +470,6 @@ static void adcConfig(Resolution resolution, tSampleRate vsamplerate) //пере
   }
 };
 
-----
 
 
 2) *Передача значений по беспроводному интерфейсу должна осуществляться через модуль BlueTooth Bee HC-06*.
@@ -610,22 +609,9 @@ image::photos/ADC.png[]
 
 
 
----
 
-Класс *DMA*
 
-.Класс *DMA*
 
-image::photos/DMA.png[]
-
-Методы:
-
-* *ChanellSet* - устанавливаем канал, к которому подключен ацп.
-
-* *ГDirectionSet* - устанавливаем направление передачи.
-* *DataSizeSet* - устанавлием объем памяти для периферии и памяти.
-* *TargetSet* - указываем целеву область памяти.
-* *StreamON* - устанавливаем CircularMode и запускаем поток.
 
 ---
 Класс *VariableTask*
@@ -703,7 +689,7 @@ image::photos/LedTask.png[]
 Класс *Led*
 
 .Класс *Led*
-image::photos/Led.png[]
+image::photos/led.png[]
 
 Методы:
 
