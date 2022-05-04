@@ -407,33 +407,42 @@ static void On()
 ----
 static void adcConfig(Resolution resolution, tSampleRate vsamplerate) //передаем в adcConfig разрешение АЦП и частоту дискритизации
   {
+
     switch(resolution) // Выбор разрешений АЦП
     {
       case Resolution::Bits12:
       T::CR1::RES::Bits12::Set();
       break;
+
       case Resolution::Bits10:
       T::CR1::RES::Bits10::Set();
       break;
+
       case Resolution::Bits8:
       T::CR1::RES::Bits8::Set();
       break;
+
       case Resolution::Bits6:
       T::CR1::RES::Bits6::Set();
       break;
+
       default:
       T::CR1::RES::Bits12::Set();
       break;
     }
+
     switch(vsamplerate)
     {
       case tSampleRate::Cycles3:
       T::SMPR2::SMP0::Cycles3::Set();
       break;
+
       <...>
+
       case tSampleRate::Cycles480:
       T::SMPR2::SMP0::Cycles480::Set();
       break;
+
       default:
       T::SMPR2::SMP0::Cycles480::Set();
       break;
@@ -456,6 +465,7 @@ static void SetChannels (std::uint32_t channelNum1, std::uint32_t channelNum2)
     T::SQR3::SQ2::Set(channelNum2);
     T::CR2::DDS::DMARequest::Set(); // DMA будут выполняться всегда, как только данные подготовлены и пока включен бит DMA
   }
+
   static std::array<uint32_t, 2>& GetValue() // метод типа массив, получает значения
   {
     return codes; // возвращает значения напряжения
