@@ -465,13 +465,13 @@ static void SetChannels (std::uint32_t channelNum1, std::uint32_t channelNum2)
     T::SQR3::SQ2::Set(channelNum2);
     T::CR2::DDS::DMARequest::Set(); // DMA будут выполняться всегда, как только данные подготовлены и пока включен бит DMA
   }
-
   static std::array<uint32_t, 2>& GetValue() // метод типа массив, получает значения
   {
     return codes; // возвращает значения напряжения
   }
 };
-
+----
+[source,cpp]
 ----
 
 2) *Передача значений по беспроводному интерфейсу должна осуществляться через модуль BlueTooth Bee HC-06*.
