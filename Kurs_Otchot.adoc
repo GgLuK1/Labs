@@ -452,27 +452,7 @@ static void adcConfig(Resolution resolution, tSampleRate vsamplerate) //пере
 ----
 Настройка каналов для преобразований
 [source,cpp]
-----
-static void SetChannels (std::uint32_t channelNum1, std::uint32_t channelNum2)
-  {
-    T::SQR1::L::Conversions2::Set();// количество измрений
-    T::CR1::SCAN::Enable::Set();//установка режима сканирования
-    T::CR2::EOCS::SequenceConversion::Set(); // EOC устанавливается после завершения всей последовательности регулярных преобразований.
-    T::CR2::CONT::ContinuousConversion::Set(); // установлен режим непрерывного преобразования
-    assert(channelNum1 <19); // проверяем номер канала
-    assert(channelNum2 <19);
-    T::SQR3::SQ1::Set(channelNum1); // Выбрать канал для первого преобразования
-    T::SQR3::SQ2::Set(channelNum2);
-    T::CR2::DDS::DMARequest::Set(); // DMA будут выполняться всегда, как только данные подготовлены и пока включен бит DMA
-  }
-  static std::array<uint32_t, 2>& GetValue() // метод типа массив, получает значения
-  {
-    return codes; // возвращает значения напряжения
-  }
-};
-----
-[source,cpp]
-----
+
 
 2) *Передача значений по беспроводному интерфейсу должна осуществляться через модуль BlueTooth Bee HC-06*.
 
