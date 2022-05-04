@@ -471,6 +471,7 @@ static void SetChannels (std::uint32_t channelNum1, std::uint32_t channelNum2)
     return codes; // возвращает значения напряжения
   }
 };
+
 ----
 
 2) *Передача значений по беспроводному интерфейсу должна осуществляться через модуль BlueTooth Bee HC-06*.
