@@ -407,7 +407,6 @@ static void On()
 ----
 static void adcConfig(Resolution resolution, tSampleRate vsamplerate) //передаем в adcConfig разрешение АЦП и частоту дискритизации
   {
-
     switch(resolution) // Выбор разрешений АЦП
     {
       case Resolution::Bits12:
@@ -452,7 +451,7 @@ static void adcConfig(Resolution resolution, tSampleRate vsamplerate) //пере
 ----
 Настройка каналов для преобразований
 [source,cpp]
-----
+
 static void SetChannels (std::uint32_t channelNum1, std::uint32_t channelNum2)
   {
     T::SQR1::L::Conversions2::Set();// количество измрений
